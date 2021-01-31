@@ -130,12 +130,15 @@ public class ZoomView  implements PlatformView,
         final MeetingService meetingService = zoomSDK.getMeetingService();
 
         JoinMeetingOptions opts = new JoinMeetingOptions();
-        opts.no_invite = parseBoolean(options, "disableInvite", false);
-        opts.no_share = parseBoolean(options, "disableShare", false);
         opts.no_driving_mode = parseBoolean(options, "disableDrive", false);
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
+	opts.no_invite = true;
+        opts.no_share = true;
+        opts.no_titlebar = true;
+        opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_MEETING_ID + MeetingViewsOptions.NO_TEXT_PASSWORD + MeetingViewsOptions.NO_BUTTON_PARTICIPANTS + MeetingViewsOptions.NO_BUTTON_VIDEO;
+
 
         JoinMeetingParams params = new JoinMeetingParams();
 
