@@ -24,6 +24,7 @@ import us.zoom.sdk.ZoomSDK;
 import us.zoom.sdk.ZoomSDKAuthenticationListener;
 import us.zoom.sdk.ZoomSDKInitParams;
 import us.zoom.sdk.ZoomSDKInitializeListener;
+import us.zoom.sdk.MeetingViewsOptions;
 
 public class ZoomView  implements PlatformView,
         MethodChannel.MethodCallHandler,
@@ -169,7 +170,7 @@ public class ZoomView  implements PlatformView,
         opts.no_invite = true;
         opts.no_share = true;
         opts.no_titlebar = true;
-        opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_MEETING_ID + MeetingViewsOptions.NO_TEXT_PASSWORD;
+        opts.meeting_views_options = MeetingViewsOptions.NO_TEXT_MEETING_ID + MeetingViewsOptions.NO_TEXT_PASSWORD + MeetingViewsOptions.NO_BUTTON_PARTICIPANTS + MeetingViewsOptions.NO_BUTTON_VIDEO;
 
         StartMeetingParamsWithoutLogin params = new StartMeetingParamsWithoutLogin();
 
